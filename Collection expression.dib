@@ -1,0 +1,43 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"languageName":"csharp","name":"csharp"}]}}
+
+#!markdown
+
+# Collection expressions
+
+#!csharp
+
+// Initialization
+var emptyArray1 = Array.Empty<int>();
+var array1 = new int[] { 1, 2, 3 };
+var emptyList1 = new List<int>();
+var list1 = new List<int> { 1, 2, 3 };
+
+
+// C# 12 - shorter Initialization
+int[] emptyArray2 = [];
+int[] array2 = [ 1, 2, 3 ];
+List<int> emptyList2 = [];
+List<int> list2 = [ 1, 2, 3 ];
+
+#!csharp
+
+// Combining arrays
+int[] row1 = [1, 2, 3];
+int[] row2 = [4, 5, 6];
+int[] row3 = [7, 8, 9];
+
+int[] combined1 = row1.Concat(row2).Concat(row3).ToArray();
+
+// C# 12 -  spread opperator
+int[] combined2 = [ ..row1, ..row2, ..row3 ];
+
+#!csharp
+
+// Add to an array
+int[] array3 = [ 1, 2, 3 ];
+
+// Dotnet benchmark shows this is faster than Array.Resize ???
+array3 = [ ..array3, 4 ];
+array3 = [ 0, ..array3 ];
