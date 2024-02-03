@@ -20,6 +20,8 @@ using IntList = System.Collections.Generic.List<int>;
 using HashDictionary = System.Collections.Generic.Dictionary<int, string>;
 using IntMatrix = System.Collections.Generic.List<System.Collections.Generic.List<int>>;
 
+#!csharp
+
 // Special cases:
 using NullableRefType = string?; // not allowed
 using NullableValueType = int?; // allowed
