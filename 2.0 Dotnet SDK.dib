@@ -1,0 +1,29 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!csharp
+
+# Dotnet SDK features
+
+With Dotnet 8, the SDK also gives us a few more options to work with.
+
+For example, it's now possible to get project properties in the CLI. This is useful for automation and scripting.
+
+These new options don't show up (yet?) when you run `dotnet build|publish --help`, but they are there.
+
+#!csharp
+
+dotnet build --getProperty:OutputPath
+
+#!markdown
+
+New SDK options:
+
+--getProperty:<propertyName> - Get the value of the specified property
+--getItem:<itemName> - Get the value(s) of the specified item
+--getTargetResult - Get the return values of the targets that were specified via the -target option.
+
+#!markdown
+
+TODO: Add some example for the getItem and GetTargetResult parameters.
