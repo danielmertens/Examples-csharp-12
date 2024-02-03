@@ -1,0 +1,26 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"languageName":"csharp","name":"csharp"}]}}
+
+#!markdown
+
+# Collection initialization for custom types
+
+#!csharp
+
+using System.Runtime.CompilerServices;
+using System.Collections.Generic;
+
+// You can add this to your own types by adding the CollectionBuilderAttribute to your code
+[CollectionBuilder(typeof(MyCollectionBuilder), "Create")]
+public interface IMyCollection<T> : IEnumerable<T> { }
+
+public class MyCollection<T> : List<T>, IMyCollection<T> { 
+    public MyCollection(T[] Values){}
+}
+
+public static class MyCollectionBuilder {
+    public static IMyCollection<T> Create<T>(T[] values) {
+        return new MyCollection<T>(values);
+    }
+}
