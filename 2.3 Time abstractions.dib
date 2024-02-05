@@ -1,0 +1,45 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+# Time abstraction 
+
+New TimeProvider class and ITimer interface have been added.
+- Useful for testing time-dependent code.
+- Can be used to mock Task.Delay and Task.WaitAsync -> Microsoft.Extensions.TimeProvider.Testing nuget package with FakeTimeProvider.
+- Quite bulky though
+
+#!csharp
+
+public abstract class TimeProvider
+{
+    public static TimeProvider System { get; } = new SystemTimeProvider();
+    public DateTimeOffset GetLocalNow();
+    protected TimeProvider();
+    public TimeSpan GetElapsedTime(long startingTimestamp, long endingTimestamp);
+    public TimeSpan GetElapsedTime(long startingTimestamp) => GetElapsedTime(startingTimestamp, GetTimestamp());
+
+    public virtual DateTimeOffset GetUtcNow() => DateTimeOffset.UtcNow;
+    public virtual TimeZoneInfo LocalTimeZone => TimeZoneInfo.Local;
+    public virtual long TimestampFrequency => Stopwatch.Frequency;
+    public virtual long GetTimestamp() => Stopwatch.GetTimestamp();
+    public virtual ITimer CreateTimer(TimerCallback callback, object? state, TimeSpan dueTime, TimeSpan period);
+}
+
+public interface ITimer : IDisposable, IAsyncDisposable
+{
+    bool Change(TimeSpan dueTime, TimeSpan period);
+}
+
+
+public partial class Task : IAsyncResult, IDisposable
+{
+    public static Task Delay(TimeSpan delay, TimeProvider timeProvider);
+}
+
+public partial class Task<TResult> : Task
+{
+    public new Task<TResult> WaitAsync(TimeSpan timeout, TimeProvider timeProvider);
+}
