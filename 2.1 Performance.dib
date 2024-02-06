@@ -1,0 +1,11 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+# Interceptors
+
+This is an experimental feature still.
+
+Lets go over this in a project.
