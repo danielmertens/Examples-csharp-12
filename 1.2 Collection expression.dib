@@ -38,6 +38,11 @@ int[] combined2 = [ ..row1, ..row2, ..row3 ];
 // Add to an array
 int[] array3 = [ 1, 2, 3 ];
 
-// Dotnet benchmark shows this is faster than Array.Resize ???
 array3 = [ ..array3, 4 ];
 array3 = [ 0, ..array3 ];
+
+#!markdown
+
+It's a lot faster to use the spread operator than using the array concat functionality.
+
+![Benchmark](./images/Benchmark%20spread%20operator.jpg)

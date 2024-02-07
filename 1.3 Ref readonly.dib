@@ -40,7 +40,7 @@ void ReadOnlyExample(ref readonly int number)
 }
 
 int readonlyArgument = 44;
-ReadOnlyExample(in readonlyArgument);
+ReadOnlyExample(ref readonlyArgument);
 Console.WriteLine(readonlyArgument);
 
 #!markdown
