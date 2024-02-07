@@ -73,3 +73,5 @@
 - Windows Presentation Foundation
 - NuGet
 - Diagnostics
+- EFCore
+  - ...
