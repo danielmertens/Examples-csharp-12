@@ -27,7 +27,8 @@ Console.WriteLine($"({p1.x}, {p1.y})");
 
 #!csharp
 
-public record class Point2(int X, int Y);
+// While primary constructors on record made the parameters public.
+public record Point2(int X, int Y);
 
 var p2 = new Point2(1, 2);
 
