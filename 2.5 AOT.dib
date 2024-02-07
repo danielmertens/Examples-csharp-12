@@ -1,0 +1,17 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+# AOT : Ahead-Of-Time Compilation
+
+- Support for x64 and arm64 architectures on macOS
+- Reduce file size, startup time and memory demand.
+
+``` xml
+<PropertyGroup>
+    <PublishAot>true</PublishAot>
+</PropertyGroup>
+```
+![AOT](./images/aot-runtime-trimmed-perf-chart.png)
