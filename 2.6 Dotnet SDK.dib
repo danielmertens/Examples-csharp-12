@@ -41,10 +41,7 @@ The SDK also provides a new place for your build artifacts. You can now easily s
 
 By default, the following structure is created:
 
-📁 artifacts
-    └──📂 <Type of output>
-        └──📂 <Project name>
-            └──📂 <Pivot>
+![folder structure](./images/Artifact%20layout.jpg)
 
 You can set this however you want in the `Directory.Build.props` file.
 
