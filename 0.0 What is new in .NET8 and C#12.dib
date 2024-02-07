@@ -1,0 +1,75 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"languageName":"csharp","name":"csharp"}]}}
+
+#!markdown
+
+# What's new in .NET 8 and C# 12
+
+#!markdown
+
+- C# 12
+  - Primary constructors
+  - Collection expressions
+  - ref readonly parameters
+  - Default lambda parameters
+  - Alias any type
+  - Inline arrays
+  - Experimental attribute
+  - Interceptors
+- .NET Aspire
+- ASP.NET Core
+  - Blazor
+  - SignalR
+  - Minimal APIs
+  - User override culture
+  - Native AOT
+  - Kestrel and HTTP.sys servers
+  - Authentication and authorization
+  - Miscellaneous
+- Core .NET libraries
+  - Serialization
+  - Time abstraction
+  - UTF8 improvements
+  - Methods for working with randomness
+  - Performance-focused types
+  - System.Numerics and System.Runtime.Intrinsics
+  - Data validation
+  - Metrics
+  - Cryptography
+  - Networking
+  - Stream-based ZipFile methods
+- Extension libraries
+  - Options validation
+  - LoggerMessageAttribute constructors
+  - Extensions metrics
+  - Hosted lifecycle services
+  - Keyed DI services
+  - System.Numerics.Tensors.TensorPrimitives
+- Garbage collection
+- Configuration-binding source generator
+- Reflection improvements
+- Native AOT support
+- Performance improvements
+- .NET MAUI
+  - New controls
+  - Performance improvements
+- .NET SDK
+  - CLI-based project evaluation
+  - Terminal build output
+  - Simplified output paths
+  - 'dotnet workload clean' command
+  - 'dotnet publish' and 'dotnet pack' assets
+  - Template engine
+  - Source Link
+  - Source-build SDK
+- Globalization
+- Containers
+- Source-generated COM interop
+- .NET on Linux
+- Cross-built Windows apps
+- AOT compilation for Android apps
+- Code analysis
+- Windows Presentation Foundation
+- NuGet
+- Diagnostics
